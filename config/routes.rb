@@ -1,4 +1,11 @@
 Weblog::Application.routes.draw do
+
+  namespace :backend do
+    devise_for :admins
+    root to: "posts#index"
+    resources :posts
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
