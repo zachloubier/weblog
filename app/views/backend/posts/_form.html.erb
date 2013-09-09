@@ -1,0 +1,7 @@
+<%= simple_form_for [ resource ] do |f| %>
+	<%= f.input :admin_id, collection: Admin.all, label_method: :email %>
+	<% attributes.each do |attr| %>
+		<%= f.input attr %>
+	<% end %>
+	<%= f.submit %>
+<% end %>
