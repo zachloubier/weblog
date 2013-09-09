@@ -3,5 +3,8 @@
 	<% attributes.each do |attr| %>
 		<%= f.input attr %>
 	<% end %>
+	<%= f.association :categories, as: :check_boxes %>
+
+
 	<%= f.submit %>
 <% end %>

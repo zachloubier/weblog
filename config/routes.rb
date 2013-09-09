@@ -1,7 +1,7 @@
 Weblog::Application.routes.draw do
 
   namespace :backend do
-    devise_for :admins
+    devise_for :admins, :path => 'users'
     root to: "posts#index"
     resources :posts, :categories
   end
