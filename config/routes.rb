@@ -1,10 +1,23 @@
 Weblog::Application.routes.draw do
 
-  namespace :backend do
-    devise_for :admins, :path => 'users'
-    root to: "posts#index"
-    resources :posts, :categories
-  end
+    namespace :backend do
+        devise_for :admins, path: 'users'
+        devise_scope :admin do
+            # get 'logout', to: 'sessions#destroy', as: :logout
+            # get 'login', to: 'sessions#new', as: :login
+        end
+        root to: "posts#index"
+        resources :posts, :categories, :tags
+    end
+
+    namespace :blog do
+        resources :posts, :categories
+        root to: 'posts#index'
+        get ':slug', to: 'posts#show', as: :post
+        get '/category/:slug', to: 'categories#show', as: :category
+    end
+    
+    root to: 'blog/posts#index'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

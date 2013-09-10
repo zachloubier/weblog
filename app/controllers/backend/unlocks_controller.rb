@@ -1,3 +1,3 @@
-class Backend::UnlocksController < Devise::UnlocksController
+class Backend::UnlocksController < ::Devise::UnlocksController
 
 end

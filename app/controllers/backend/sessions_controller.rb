@@ -1,3 +1,3 @@
-class Backend::SessionsController < Devise::SessionsController
+class Backend::SessionsController < ::Devise::SessionsController
 
 end

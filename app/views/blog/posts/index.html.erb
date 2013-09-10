@@ -1,0 +1,17 @@
+<% @posts.each do |post| %>
+	<div class="post">
+		<div class="row">
+			<div class="span1">
+
+			</div>
+			<div class="span7">
+				<strong><%= post.title %></strong>
+				<span><%= post.admin.email %></span>
+				<p><%= post.description %></p>
+				<div class="actions">
+					<%= link_to "Read More", blog_post_path(post.slug) %>
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>

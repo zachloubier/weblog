@@ -5,10 +5,43 @@
 	<%= stylesheet_link_tag    "application", :media => "all" %>
 	<%= javascript_include_tag "application" %>
 	<%= csrf_meta_tags %>
+	<script>
+		$(document).ready(function(){
+			$('.text').wysihtml5();
+		})
+	</script>
 </head>
 <body>
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+				<a href="/" class="brand">Trellis</a>
+				<ul class="nav">
+					<li>
+						<%= link_to "Blog", blog_root_path %>
+					</li>
+					<li>
+						<%= link_to "Backend Home", backend_root_path %>
+					</li>
+				</ul>
+				<ul class="nav pull-right">
+					<% if backend_admin_signed_in? %>
+						<li>
+							<%= link_to current_backend_admin.email, edit_backend_admin_registration_path %>
+						</li>
+						<li>
+							<%= link_to "Log Out", destroy_backend_admin_session_path, method: :delete %>
+						</li>
+					<% else %>
+						<li><%= link_to "Log in", new_backend_admin_session_path %></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container">
 
-	<%= yield %>
-
+		<%= yield %>
+	</div>
 </body>
 </html>

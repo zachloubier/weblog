@@ -1,3 +1,3 @@
-class Backend::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+class Backend::OmniauthCallbacksController < ::Devise::OmniauthCallbacksController
 
 end

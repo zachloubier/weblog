@@ -1,7 +1,7 @@
 <ul>
 	<% resource_class.attribute_names.each do |attr| %>
 		<li>
-			<label><%= resource_class.human_attribute_name(attr) %></label>
+			<label><strong><%= resource_class.human_attribute_name(attr) %>:</strong></label>
 			<span><%= resource.public_send(attr) %></span>
 		</li>
 	<% end %>

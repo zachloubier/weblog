@@ -1,3 +1,3 @@
-class Backend::ConfirmationsController < Devise::ConfirmationsController
+class Backend::ConfirmationsController < ::Devise::ConfirmationsController
 
 end

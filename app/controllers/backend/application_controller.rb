@@ -1,5 +1,4 @@
 class Backend::ApplicationController < ApplicationController
 	protect_from_forgery
-	layout = 'backend/application'
-	# before_filter :authenticate_admin!
+	before_filter :authenticate_backend_admin!
 end

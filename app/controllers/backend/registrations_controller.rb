@@ -1,3 +1,3 @@
-class Backend::RegistrationsController < Devise::RegistrationsController
+class Backend::RegistrationsController < ::Devise::RegistrationsController
 
 end
