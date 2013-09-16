@@ -1,2 +1,8 @@
 <%= raw @post.body %>
 <%= @post.slug %>
+
+<%= render partial: "shared/social_sharing" %>
+
+<%= render partial: "comments", comments: @comments, new_comment: @new_comment %>
+
+<%= render partial: "shared/disqus", locals: { title: @post.title } %>

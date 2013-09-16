@@ -111,6 +111,7 @@ GEM
     simple_form (2.1.0)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
+    social-share-button (0.1.4)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -153,6 +154,7 @@ DEPENDENCIES
   rails (= 3.2.14)
   responders
   simple_form
+  social-share-button
   therubyracer
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)

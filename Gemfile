@@ -18,6 +18,7 @@ gem 'bootstrap-wysihtml5-rails'
 gem 'twitter-bootstrap-rails'
 gem 'less-rails', '~> 2.4.2'
 gem 'therubyracer', :platforms => :ruby
+gem 'social-share-button'
 
 
 # Gems used only for assets and not required

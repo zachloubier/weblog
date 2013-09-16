@@ -1,0 +1,9 @@
+<%= simple_form_for(@comment) do |f| %>
+	<%= f.input :admin_id, collection: Admin.all, label_method: :email %>
+	<%= f.input :post_id, collection: Post.all, label_method: :title %>
+	<% attributes.each do |attr| %>
+		<%= f.input attr %>
+	<% end %>
+
+	<%= f.submit %>
+<% end %>

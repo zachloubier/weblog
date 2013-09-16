@@ -1,0 +1,39 @@
+<div class="navbar">
+	<div class="navbar-inner">
+		<div class="container">
+			<a href="/" class="brand">Trellis</a>
+			<ul class="nav">
+				<li>
+					<%= link_to "Blog", blog_root_path %>
+				</li>
+				<li>
+					<%= link_to "Backend Home", backend_root_path %>
+				</li>
+				<li>
+					<%= link_to "Posts", backend_posts_path %>
+				</li>
+				<li>
+					<%= link_to "Categories", backend_categories_path %>
+				</li>
+				<li>
+					<%= link_to "Tags", backend_tags_path %>
+				</li>
+				<li>
+					<%= link_to "Comments", backend_comments_path %>
+				</li>
+			</ul>
+			<ul class="nav pull-right">
+				<% if backend_admin_signed_in? %>
+					<li>
+						<%= link_to current_backend_admin.email, edit_backend_admin_registration_path %>
+					</li>
+					<li>
+						<%= link_to "Log Out", destroy_backend_admin_session_path, method: :delete %>
+					</li>
+				<% else %>
+					<li><%= link_to "Log in", new_backend_admin_session_path %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>

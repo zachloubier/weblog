@@ -1,0 +1,17 @@
+<h3><%= @comments.count %> Comments</h3>
+
+<% if backend_admin_signed_in? %>
+	<%= simple_form_for(@new_comment) do |f| %>
+		<%= f.input :title %>
+		<%= f.input :body %>
+	<% end  %>
+	<%= render partial: "new_comment_form", comment: @new_comment %>
+<% end %>
+
+<% @comments.each do |comment| %>
+	<div>
+		<%= comment.title %>
+		<br/>
+		<%= comment.body %>
+	</div>
+<% end %>

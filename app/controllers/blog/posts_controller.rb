@@ -11,6 +11,11 @@ class Blog::PostsController < Blog::ApplicationController
 
 	def show
 		@post = Post.find_by_slug(params[:slug])
+		@comments = @post.comments.all
+		if backend_admin_signed_in?
+			@new_comment = Comment.new
+			@new_comment.title = "titleasdf"
+		end
 
 		respond_to do |format|
 			format.html # show.html.erb

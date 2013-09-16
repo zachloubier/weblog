@@ -12,33 +12,19 @@
 	</script>
 </head>
 <body>
-	<div class="navbar">
-		<div class="navbar-inner">
-			<div class="container">
-				<a href="/" class="brand">Trellis</a>
-				<ul class="nav">
-					<li>
-						<%= link_to "Blog", blog_root_path %>
-					</li>
-					<li>
-						<%= link_to "Backend Home", backend_root_path %>
-					</li>
-				</ul>
-				<ul class="nav pull-right">
-					<% if backend_admin_signed_in? %>
-						<li>
-							<%= link_to current_backend_admin.email, edit_backend_admin_registration_path %>
-						</li>
-						<li>
-							<%= link_to "Log Out", destroy_backend_admin_session_path, method: :delete %>
-						</li>
-					<% else %>
-						<li><%= link_to "Log in", new_backend_admin_session_path %></li>
-					<% end %>
-				</ul>
-			</div>
-		</div>
-	</div>
+	<div id="fb-root"></div>
+	<script>
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=146410762235743";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+	<% if backend_admin_signed_in? %>
+		<%= render 'shared/admin_navbar' %>
+	<% end %>
 	<div class="container">
 
 		<%= yield %>

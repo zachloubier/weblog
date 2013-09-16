@@ -7,11 +7,11 @@ Weblog::Application.routes.draw do
             # get 'login', to: 'sessions#new', as: :login
         end
         root to: "posts#index"
-        resources :posts, :categories, :tags
+        resources :posts, :categories, :tags, :comments
     end
 
     namespace :blog do
-        resources :posts, :categories
+        resources :posts, :categories, :tags, :comments
         root to: 'posts#index'
         get ':slug', to: 'posts#show', as: :post
         get '/category/:slug', to: 'categories#show', as: :category
